@@ -6,9 +6,6 @@
 install.packages("dplyr")
 install.packages("tidyverse")
 
-# Importing the libraries 
-library(dplyr)
-library(tidyverse)
 
 
 # Importing and installing the "GEOquery" library from Bioconductors
@@ -17,4 +14,12 @@ if (!require("BiocManager", quietly = TRUE))
 
 BiocManager::install("GEOquery")
 
+# Importing the libraries 
 library(GEOquery)
+library(dplyr)
+library(tidyverse)
+
+print(getwd())
+
+# Reading the data from the working directory 
+dat <- read.csv(file = "/data/GSE183947_fpkm.csv")
