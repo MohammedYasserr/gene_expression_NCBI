@@ -8,12 +8,6 @@ install.packages("tidyverse")
 
 
 
-# Importing and installing the "GEOquery" library from Bioconductors
-if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-
-BiocManager::install("GEOquery")
-
 # Importing the libraries 
 library(GEOquery)
 library(dplyr)
@@ -22,4 +16,12 @@ library(tidyverse)
 print(getwd())
 
 # Reading the data from the working directory 
-dat <- read.csv(file = "/data/GSE183947_fpkm.csv")
+dat <- read.csv(file = "data/GSE183947_fpkm.csv")
+#Getting the dimentions of a dateset
+dim(dat)
+
+
+# Getting the metadata (Clinical data associated with the gene expression data set)
+getGEO(GEO = 'GSE183947', GSEMatrix = TRUE)
+
+
